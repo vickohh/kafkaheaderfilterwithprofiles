@@ -63,6 +63,23 @@ da abuena aideaa de como leer los mensajaes pero el consumer consume el mensaje 
 https://www.youtube.com/watch?v=AMhPMdLExTc  POR ANALIZAR MAS A FONDO
 Kafka Filtered Listener - Spring boot
 
+
+
+
+----------------------------
+
+
+equest endpoint
+POST:
+http://localhost:8080/publish
+
+BODY:
+Request 1: Should be consumed as it meets the eventType criteria specified in application.properties
+{ "eventType": "NEWM", "message": "NEW message consumed." }
+
+Request 2: Should be skipped as it does not meet the eventType criteria specified in application.properties
+{ "eventType": "CANC", "message": "Cancel message skipped." }
+
 este video muestra como usar el setRecordFilterStrategy y leer los headers para filtrar a traves de una clase @component que ayuda al la clase de configuracion del consumer
 
 
